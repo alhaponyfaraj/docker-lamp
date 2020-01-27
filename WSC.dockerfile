@@ -13,5 +13,9 @@ RUN apt-get install -y software-properties-common
 COPY ./php.ini /etc/php/7.3/apache2/php.ini
 COPY ./apache2.conf /etc/apache2/apache2.conf
 RUN systemctl enable apache2.service
+
+# enables the specified module within the apache2 configuration
+RUN a2enmod rewrite headers
+
 EXPOSE 80
 EXPOSE 443
