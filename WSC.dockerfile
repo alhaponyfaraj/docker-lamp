@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV DEBCONF_NONINTERACTIVE_SEEN true
 
 RUN apt-get install -y apache2 
-RUN apt-get install -y php-{bcmath,bz2,intl,gd,mbstring,mcrypt,mysql,dev,common,json}
+RUN apt-get install -y php-bcmath php-bz2 php-intl php-gd php-mbstring libmcrypt-dev php-mysql,dev php-common php-json
 RUN apt-get install -y libapache2-mod-php  
 RUN apt-get install -y composer
 RUN apt-get install -y software-properties-common
