@@ -1,6 +1,10 @@
 FROM ubuntu:latest
 RUN apt-get update -y
 RUN apt-get upgrade -y
+# skip interaction with terminal
+ENV DEBIAN_FRONTEND noninteractive
+ENV DEBCONF_NONINTERACTIVE_SEEN true
+
 RUN apt-get install -y apache2 
 RUN apt-get install -y php-{bcmath,bz2,intl,gd,mbstring,mcrypt,mysql,dev,common,json}
 RUN apt-get install -y libapache2-mod-php  
